@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://muyduiy0k614"]
+
+[sub_resource type="FontFile" id="FontFile_1cy6u"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wme6m"]
+bg_color = Color(0.881242, 0.460433, 0.403204, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2fh5"]
+bg_color = Color(1, 0.345575, 0.25513, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17h2v"]
+bg_color = Color(0.724498, 0.453956, 0.943184, 1)
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="RestartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -17.0
+offset_right = 126.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontFile_1cy6u")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_wme6m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c2fh5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_17h2v")
+text = "RESTART
+"

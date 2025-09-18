@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://climedpyi2u08"]
+
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_ehmnb"]
+[ext_resource type="PackedScene" uid="uid://coch6fn3ukayn" path="res://Scenes/Parallax_BG.tscn" id="1_h8m2w"]
+[ext_resource type="PackedScene" uid="uid://b44fqketfjlke" path="res://Scenes/skateboard_cat.tscn" id="2_e4vw3"]
+[ext_resource type="PackedScene" uid="uid://y3347pa2fs2w" path="res://Scenes/Ground.tscn" id="3_kkxlt"]
+[ext_resource type="PackedScene" uid="uid://c7oums1gu05l8" path="res://Scenes/hud.tscn" id="5_flssg"]
+[ext_resource type="PackedScene" uid="uid://muyduiy0k614" path="res://Scenes/game_over.tscn" id="6_71568"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ehmnb")
+
+[node name="BG" parent="." instance=ExtResource("1_h8m2w")]
+
+[node name="Ground" parent="." instance=ExtResource("3_kkxlt")]
+position = Vector2(0, -10)
+
+[node name="Skateboard Cat" parent="." instance=ExtResource("2_e4vw3")]
+position = Vector2(98, 527)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="HUD" parent="." instance=ExtResource("5_flssg")]
+
+[node name="GameOver" parent="." instance=ExtResource("6_71568")]
+process_mode = 2
