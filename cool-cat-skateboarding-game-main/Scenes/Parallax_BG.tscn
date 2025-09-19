@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://coch6fn3ukayn"]
+
+[ext_resource type="Texture2D" uid="uid://hkmpcuswvegl" path="res://Assets/Jungle Asset Pack/parallax background/plx-1.png" id="1_qakbc"]
+[ext_resource type="Texture2D" uid="uid://dnurcjob2vlm5" path="res://Assets/Jungle Asset Pack/parallax background/plx-2.png" id="2_sh6fe"]
+[ext_resource type="Texture2D" uid="uid://jqy8kyr3hf5" path="res://Assets/Jungle Asset Pack/parallax background/plx-3.png" id="3_kfv4q"]
+[ext_resource type="Texture2D" uid="uid://dbrnq140ti662" path="res://Assets/Jungle Asset Pack/parallax background/plx-4.png" id="4_h1lwv"]
+[ext_resource type="Texture2D" uid="uid://wgn1pih7rvr2" path="res://Assets/Jungle Asset Pack/parallax background/plx-5.png" id="5_far2e"]
+
+[node name="BG" type="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_qakbc")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_sh6fe")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("3_kfv4q")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("4_h1lwv")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("5_far2e")
+centered = false

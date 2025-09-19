@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://crbfvk86aqxfo"]
+
+[ext_resource type="Texture2D" uid="uid://pqwmnhwxs0qc" path="res://Assets/Fire_Hydrant.png" id="1_8u6ph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k47b"]
+size = Vector2(64, 128)
+
+[node name="Fire Hydrant" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_8u6ph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_5k47b")

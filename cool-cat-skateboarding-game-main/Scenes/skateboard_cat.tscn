@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://b44fqketfjlke"]
+
+[ext_resource type="Script" uid="uid://cxwbjpt811a28" path="res://Scenes/skateboard_cat.gd" id="1_71pf4"]
+[ext_resource type="Texture2D" uid="uid://bakvjv1joani1" path="res://Assets/Cat Skateboard placeholder.png" id="1_au8ac"]
+[ext_resource type="AudioStream" uid="uid://duxflm0l16ahe" path="res://Assets/jump.ogg" id="3_eb2m4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq0fb"]
+atlas = ExtResource("1_au8ac")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5es6"]
+atlas = ExtResource("1_au8ac")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hya0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq0fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5es6")
+}],
+"loop": true,
+"name": &"Skateboarding",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ega43"]
+size = Vector2(20.5714, 12.0536)
+
+[node name="Skateboard Cat" type="CharacterBody2D"]
+scale = Vector2(7, 7)
+script = ExtResource("1_71pf4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_6hya0")
+animation = &"Skateboarding"
+autoplay = "Skateboarding"
+frame = 1
+frame_progress = 0.0419796
+
+[node name="RunCol" type="CollisionShape2D" parent="."]
+position = Vector2(-6.81196e-07, 1.40179)
+shape = SubResource("RectangleShape2D_ega43")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_eb2m4")
+volume_db = -5.0
