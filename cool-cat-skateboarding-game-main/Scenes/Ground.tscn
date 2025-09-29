@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://y3347pa2fs2w"]
+
+[ext_resource type="Texture2D" uid="uid://cryrj0v3p3eei" path="res://Assets/Concrete Floor.png" id="1_7jbfi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g6sw"]
+size = Vector2(4608, 55.5)
+
+[node name="Ground" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2304, 600)
+scale = Vector2(2, 2)
+texture = ExtResource("1_7jbfi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2304, 619.75)
+shape = SubResource("RectangleShape2D_5g6sw")
