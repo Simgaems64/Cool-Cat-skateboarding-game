@@ -6,21 +6,37 @@ var dive_speed : int = 4200
 var diving : bool
 var is_ready : bool = true
 
+#Rotation/trick variables
+var rotation_speed : float = 360.0  # degrees per second when rotating
+var is_rotating : bool = false
+var total_rotation : float = 0.0  # tracks cumulative rotation in degrees
+var completed_360s : int = 0  # number of full 360s completed this jump
+var can_rotate : bool = false  # only rotate when in air
+
+signal trick_completed(rotation_count)  # signal to notify main script
+
 # Called every frame. "delta" is the elapsed time since the previous frame in game
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
 		diving = false
+	# reset rotation when landing
+		if can_rotate:
+			reset_rotation()
+			can_rotate = false
+	
 		if not get_parent().game_running:
 			$"AnimatedSprite2D".play("Idle") 
 		else:
 			if Input.is_action_pressed("ui_accept") or Input.is_action_pressed("ui_up"):
 				velocity.y = JUMP_SPEED
 				$JumpSound.play()
+				can_rotate = true # enable rotation when jumping
 			else: 
 				$"AnimatedSprite2D".play("Skateboarding") 
 	else:
 			$"AnimatedSprite2D".play("Jump") 
+			# Handle rotation when in the air (using left/right arrow keys)
 		
 	if Input.is_action_just_pressed("ui_down") && is_ready == true:
 		is_ready = false
@@ -31,6 +47,12 @@ func _physics_process(delta):
 		
 	move_and_slide()
 
+func reset_rotation():
+	# Snap rotation back to 0 when landing
+	rotation_degrees = 0
+	total_rotation = 0.0
+	completed_360s = 0
+	is_rotating = false
 
 func _on_dive_cooldown_timeout() -> void:
 	is_ready = true
