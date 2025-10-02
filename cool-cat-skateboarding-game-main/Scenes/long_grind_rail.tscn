@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c35fra06453lc"]
+
+[ext_resource type="Texture2D" uid="uid://d3ysk1rtbhxgc" path="res://Assets/Grind_Rail_Long.png" id="1_gblap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8i10j"]
+size = Vector2(256, 10)
+
+[node name="Long Grind Rail" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_gblap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_8i10j")

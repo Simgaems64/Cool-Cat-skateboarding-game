@@ -1,19 +1,11 @@
-[gd_scene load_steps=46 format=3 uid="uid://b44fqketfjlke"]
+[gd_scene load_steps=48 format=3 uid="uid://b44fqketfjlke"]
 
 [ext_resource type="Script" uid="uid://cxwbjpt811a28" path="res://Scripts/skateboard_cat.gd" id="1_71pf4"]
 [ext_resource type="Texture2D" uid="uid://d4bqnwimiyqoi" path="res://Assets/Cat_Skateboard_running.png" id="2_e0yoj"]
-[ext_resource type="Texture2D" uid="uid://bakvjv1joani1" path="res://Assets/Cat Skateboard placeholder.png" id="2_fla84"]
 [ext_resource type="Texture2D" uid="uid://dvaamsl8a1vsx" path="res://Assets/Cat_Skateboard_idle.png" id="2_ijtr3"]
 [ext_resource type="Texture2D" uid="uid://d3p30bgj45uvt" path="res://Assets/Cat_Skateboard_Jump.png" id="3_52kec"]
 [ext_resource type="AudioStream" uid="uid://duxflm0l16ahe" path="res://Assets/jump.ogg" id="3_eb2m4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_upbr5"]
-atlas = ExtResource("2_fla84")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8cp0m"]
-atlas = ExtResource("2_fla84")
-region = Rect2(48, 0, 48, 48)
+[ext_resource type="Texture2D" uid="uid://c6sbgum4qdqem" path="res://Assets/Cat_Skateboard_Rail_Grind.png" id="4_fla84"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6jyur"]
 atlas = ExtResource("2_ijtr3")
@@ -139,6 +131,22 @@ region = Rect2(128, 0, 64, 64)
 atlas = ExtResource("3_52kec")
 region = Rect2(192, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_upbr5"]
+atlas = ExtResource("4_fla84")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cp0m"]
+atlas = ExtResource("4_fla84")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b1lv"]
+atlas = ExtResource("4_fla84")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83pt2"]
+atlas = ExtResource("4_fla84")
+region = Rect2(240, 0, 80, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ijtr3"]
 atlas = ExtResource("2_e0yoj")
 region = Rect2(0, 0, 80, 64)
@@ -157,17 +165,6 @@ region = Rect2(240, 0, 80, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6hya0"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_upbr5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8cp0m")
-}],
-"loop": true,
-"name": &"Dive",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6jyur")
@@ -273,6 +270,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_upbr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cp0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b1lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83pt2")
+}],
+"loop": true,
+"name": &"Rail Grinding",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ijtr3")
 }, {
 "duration": 1.0,
@@ -302,6 +316,7 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_6hya0")
 animation = &"Skateboarding"
 autoplay = "Idle"
+frame_progress = 0.9860233
 
 [node name="RunCol" type="CollisionShape2D" parent="."]
 position = Vector2(1.2857069, 2.428571)
