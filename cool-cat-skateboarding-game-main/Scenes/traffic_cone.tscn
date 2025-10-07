@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bijjx2h28ap8j"]
+[gd_scene load_steps=2 format=3 uid="uid://bijjx2h28ap8j"]
 
-[ext_resource type="Texture2D" uid="uid://s72mil4j4kte" path="res://Assets/Traffic_Cone.png" id="1_tjyxh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hf7wq"]
-size = Vector2(13.142857, 20)
+[ext_resource type="Texture2D" uid="uid://byf4ju57eak1e" path="res://Assets/Traffic_Cone.png" id="1_tjyxh"]
 
 [node name="Traffic Cone" type="Area2D"]
 
@@ -13,7 +10,5 @@ position = Vector2(0, -19)
 scale = Vector2(2, 2)
 texture = ExtResource("1_tjyxh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.9073486e-06, -25.000002)
-scale = Vector2(7, 7)
-shape = SubResource("RectangleShape2D_hf7wq")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -94, -46, 45, 46, 45)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://2r4exudid2pc"]
 
-[ext_resource type="Texture2D" uid="uid://c6gs2jndgvthk" path="res://Assets/Grind_Rail_Short.png" id="1_dsufk"]
+[ext_resource type="Texture2D" uid="uid://bnwwhu0t0i3co" path="res://Assets/Grind_Rail_Short.png" id="1_dsufk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63inq"]
 size = Vector2(192, 10)
