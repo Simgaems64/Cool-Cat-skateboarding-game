@@ -3,8 +3,10 @@ extends Node
 #preload obstacles
 var fire_hydrant_scene = preload("res://Scenes/Fire_Hydrant.tscn")
 var pigeon_scene = preload("res://Scenes/pigeon.tscn")
-var placeholder_pat_scene = preload("res://Scenes/Placeholder_Pat.tscn")
-var obstacle_types := [fire_hydrant_scene, placeholder_pat_scene]
+var traffic_cone_scene = preload("res://Scenes/traffic_cone.tscn")
+var short_rail_scene = preload("res://Assets/Grind_Rail_Short.png")
+var long_rail_scene = preload("res://Assets/Grind_Rail_Long.png")
+var obstacle_types := [fire_hydrant_scene,traffic_cone_scene]
 var obstacles : Array
 var bird_heights := [200, 390]
 
@@ -21,6 +23,7 @@ var screen_size : Vector2i
 var ground_height : int
 var score : int 
 var dive_score_bonus : int = 1000
+var trick_score_bonus : int = 500  # bonus per 360 rotation
 var high_score : int = 0
 const SCORE_MODIFIER : int = 30
 var game_running : bool
@@ -31,8 +34,18 @@ func _ready() -> void:
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 	$GameOver.get_node("RestartButton").pressed.connect(new_game)
+	
+	# Connect the trick signal from the player
+	$"Skateboard Cat".trick_completed.connect(_on_trick_completed)
+	
 	new_game()
 	
+func _on_trick_completed(rotation_count):
+	# Award points for each completed 360
+	score += trick_score_bonus
+	show_score()
+	# Optional: play a sound effect or show visual feedback
+	print("Trick completed! Total 360s this jump: ", rotation_count)
 	
 func new_game():
 	$"Skateboard Cat/AnimatedSprite2D".play("Idle") 
@@ -52,6 +65,7 @@ func new_game():
 	#reset the nodes
 	$"Skateboard Cat".position = CAT_START_POS 
 	$"Skateboard Cat".velocity = Vector2i(0,0)
+	$"Skateboard Cat".rotation_degrees = 0  # reset rotation on new game
 	$Camera2D.position = CAM_START_POS
 	$Ground.position = Vector2i(0,0)
 	
@@ -150,4 +164,3 @@ func game_over():
 	get_tree().paused = true
 	game_running = false
 	$GameOver.show()
-	
