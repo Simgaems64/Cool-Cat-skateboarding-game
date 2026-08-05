@@ -1,14 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://bijjx2h28ap8j"]
 
-[ext_resource type="Texture2D" uid="uid://byf4ju57eak1e" path="res://Assets/Traffic_Cone.png" id="1_tjyxh"]
+[ext_resource type="Texture2D" uid="uid://s72mil4j4kte" path="res://Assets/Traffic_Cone.png" id="1_tjyxh"]
 
 [node name="Traffic Cone" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -19)
+position = Vector2(0, -16)
 scale = Vector2(2, 2)
 texture = ExtResource("1_tjyxh")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, -94, -46, 45, 46, 45)
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1.1368684e-13, -23)
+scale = Vector2(7, 7)
+polygon = PackedVector2Array(-4.4285707, 10, -0.8571425, -6.1428566, 0.8571431, -6.1428566, 4.4285717, 10)

@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://crbfvk86aqxfo"]
+[gd_scene load_steps=2 format=3 uid="uid://crbfvk86aqxfo"]
 
 [ext_resource type="Texture2D" uid="uid://qsvy5lk552xi" path="res://Assets/Fire_Hydrant_new.png" id="1_2hawd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k47b"]
-size = Vector2(64, 147)
 
 [node name="Fire Hydrant" type="Area2D"]
 
@@ -13,6 +10,6 @@ position = Vector2(0, -17)
 scale = Vector2(2, 2)
 texture = ExtResource("1_2hawd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -26.5)
-shape = SubResource("RectangleShape2D_5k47b")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, -12)
+polygon = PackedVector2Array(-31, 60, 33, 60, 25, -36, 17, -52, -15, -52, -23, -36)

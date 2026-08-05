@@ -1,32 +1,74 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0p6pcu03drii"]
+[gd_scene load_steps=13 format=3 uid="uid://c0p6pcu03drii"]
 
 [ext_resource type="Script" uid="uid://bpbu8xoviaese" path="res://Scripts/pigeon.gd" id="1_0k2gn"]
-[ext_resource type="Texture2D" uid="uid://n6wpxdhehg22" path="res://Assets/Pigeon_Placeholder.png" id="1_qm6ci"]
+[ext_resource type="Texture2D" uid="uid://li53nl7y4fye" path="res://Assets/Pigeon.png" id="2_xiqv3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t0v64"]
-atlas = ExtResource("1_qm6ci")
+[sub_resource type="AtlasTexture" id="AtlasTexture_tttfo"]
+atlas = ExtResource("2_xiqv3")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yh42w"]
-atlas = ExtResource("1_qm6ci")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnq8q"]
+atlas = ExtResource("2_xiqv3")
 region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erqr8"]
+atlas = ExtResource("2_xiqv3")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08blx"]
+atlas = ExtResource("2_xiqv3")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sr50"]
+atlas = ExtResource("2_xiqv3")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlw8o"]
+atlas = ExtResource("2_xiqv3")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5ht3"]
+atlas = ExtResource("2_xiqv3")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uew6"]
+atlas = ExtResource("2_xiqv3")
+region = Rect2(336, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mg1cd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t0v64")
+"texture": SubResource("AtlasTexture_tttfo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yh42w")
+"texture": SubResource("AtlasTexture_qnq8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erqr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08blx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sr50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlw8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5ht3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uew6")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 24.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mprk7"]
-radius = 48.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xiqv3"]
+size = Vector2(129, 28)
 
 [node name="Pigeon" type="Area2D"]
 script = ExtResource("1_0k2gn")
@@ -36,8 +78,8 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_mg1cd")
 autoplay = "default"
-frame = 1
-frame_progress = 0.309818
+frame_progress = 0.7773515
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_mprk7")
+position = Vector2(5.5, 13)
+shape = SubResource("RectangleShape2D_xiqv3")

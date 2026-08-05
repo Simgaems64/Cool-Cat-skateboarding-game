@@ -1,19 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7oums1gu05l8"]
+[gd_scene load_steps=3 format=3 uid="uid://c7oums1gu05l8"]
 
-[sub_resource type="FontFile" id="FontFile_abnap"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+[sub_resource type="FontFile" id="FontFile_3gfia"]
 cache/0/40/0/ascent = 0.0
 cache/0/40/0/descent = 0.0
 cache/0/40/0/underline_position = 0.0
 cache/0/40/0/underline_thickness = 0.0
 cache/0/40/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_e0onf"]
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -21,7 +30,7 @@ cache/0/40/0/scale = 1.0
 offset_right = 107.0
 offset_bottom = 55.0
 size_flags_horizontal = 0
-theme_override_fonts/font = SubResource("FontFile_abnap")
+theme_override_fonts/font = SubResource("FontFile_3gfia")
 theme_override_font_sizes/font_size = 40
 text = "SCORE:"
 horizontal_alignment = 1
@@ -40,7 +49,7 @@ offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = SubResource("FontFile_abnap")
+theme_override_fonts/font = SubResource("FontFile_e0onf")
 theme_override_font_sizes/font_size = 40
 text = "Press Space or up to Play
 "
@@ -55,7 +64,7 @@ offset_left = -234.0
 offset_bottom = 55.0
 grow_horizontal = 0
 size_flags_horizontal = 0
-theme_override_fonts/font = SubResource("FontFile_abnap")
+theme_override_fonts/font = SubResource("FontFile_e0onf")
 theme_override_font_sizes/font_size = 40
 text = "HIGH SCORE:"
 horizontal_alignment = 1
